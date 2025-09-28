@@ -17,7 +17,7 @@ export default function NoteDetailsClient() {
   });
 
   if (isLoading) return <LoadingIndicator />;
-  if (isError) return <ErrorMessage message={error.message} />;
+  if (isError) return <ErrorMessage error={error as Error} />;
 
   if (!data) return <p className={css.text}>Something went wrong.</p>;
 
